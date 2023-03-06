@@ -1,4 +1,4 @@
-import React from 'react';
+import styles from './styles.module.css';
 
 export default function JobsLayout({
   children,
@@ -8,7 +8,7 @@ export default function JobsLayout({
   return (
     <>
       <nav>Jobs NavBar</nav>
-      <main>{children}</main>
+      <main className={styles.main}>{children}</main>
     </>
   );
 }
