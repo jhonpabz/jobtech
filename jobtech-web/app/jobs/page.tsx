@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google';
 const inter = Inter({ subsets: ['latin'] });
 
 const Jobs = () => {
+  // throw new Error('Error zxcv');
   return (
     <>
       <main className={inter.className}>
