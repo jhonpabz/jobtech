@@ -1,5 +1,9 @@
 import styles from './styles.module.css';
 
+export const metadata = {
+  title: 'Jobs',
+};
+
 export default function JobsLayout({
   children,
 }: {
