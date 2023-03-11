@@ -6,7 +6,7 @@ export const metadata: Metadata = {
 };
 
 const UsersPage = () => {
-  const usersData: Promise<> = getAllUsers();
+  const usersData: Promise<User[]> = getAllUsers();
   return <div>UsersPage</div>;
 };
 
