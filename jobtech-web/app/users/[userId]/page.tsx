@@ -22,6 +22,7 @@ const UserPage = async ({ params: { userId } }: Params) => {
       <h2>{user.name}</h2>
       <br />
       <Suspense fallback={<h2>Loading...</h2>}>
+        {/* @ts-expect-error Async Server Component */}
         <UserPosts promise={userPostsData} />
       </Suspense>
     </>
