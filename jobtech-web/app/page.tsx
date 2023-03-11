@@ -7,6 +7,7 @@ export default function Home() {
       <div>
         <h1>JobTech</h1>
         <Link href="/jobs">Job</Link>
+        <Link href="/users">Users</Link>
       </div>
     </main>
   );
