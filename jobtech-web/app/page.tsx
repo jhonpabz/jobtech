@@ -8,6 +8,7 @@ export default function Home() {
         <h1>JobTech</h1>
         <Link href="/jobs">Job</Link>
         <Link href="/users">Users</Link>
+        <Link href="/landing">Landing Page</Link>
       </div>
     </main>
   );
