@@ -3,12 +3,15 @@ const app = express();
 
 // middleware
 import notFoundMiddleware from './middleware/notFound.js';
+import errorHandlerMiddleware from './middleware/errorHandler.js';
 
 app.get('/', (req, res) => {
+  throw new Error('Error');
   res.send('Welcome!');
 });
 
 app.use(notFoundMiddleware);
+app.use(errorHandlerMiddleware);
 
 const port = process.env.PORT || 5000;
 
