@@ -7,11 +7,13 @@ dotenv.config();
 import connectDB from './db/connect.js';
 
 // routers
-import authRouter from './routes/authRoutes';
+import authRouter from './routes/authRoutes.js';
 
 // middleware
 import notFoundMiddleware from './middleware/notFound.js';
 import errorHandlerMiddleware from './middleware/errorHandler.js';
+
+app.use(express.json());
 
 app.get('/', (req, res) => {
   res.send('Welcome!');
