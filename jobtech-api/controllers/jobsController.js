@@ -1,20 +1,20 @@
-const createJob = (req, res) => {
+const createJob = async (req, res) => {
   res.send('Create job');
 };
 
-const deleteJob = (req, res) => {
+const deleteJob = async (req, res) => {
   res.send('Delete job');
 };
 
-const getAllJobs = (req, res) => {
+const getAllJobs = async (req, res) => {
   res.send('Get all jobs');
 };
 
-const updateJob = (req, res) => {
+const updateJob = async (req, res) => {
   res.send('Create job');
 };
 
-const showStats = (req, res) => {
+const showStats = async (req, res) => {
   res.send('Show stats');
 };
 

@@ -9,10 +9,8 @@ import {
   showStats,
 } from '../controllers/jobsController.js';
 
-router.route('/create-job').post(createJob);
-router.route('/delete-job').delete(deleteJob);
-router.route('/get-all-jobs').get(getAllJobs);
-router.route('/update-job').patch(updateJob);
-router.route('/show-stats').get(showStats);
+router.route('/').post(createJob).get(getAllJobs);
+router.route('/stats').get(showStats);
+router.route('/:id').delete(deleteJob).patch(updateJob);
 
 export default router;
