@@ -1,7 +1,8 @@
+import cors from 'cors';
+dotenv.config();
 import express from 'express';
 const app = express();
 import dotenv from 'dotenv';
-dotenv.config();
 import 'express-async-errors';
 
 // DB and authenticateUser
@@ -15,10 +16,11 @@ import jobsRouter from './routes/jobsRoutes.js';
 import notFoundMiddleware from './middleware/notFound.js';
 import errorHandlerMiddleware from './middleware/errorHandler.js';
 
+app.use(cors());
 app.use(express.json());
 
 app.get('/', (req, res) => {
-  res.send('Welcome!');
+  res.json({ msg: 'Welcome!' });
 });
 
 app.use('/api/v1/auth', authRouter);
