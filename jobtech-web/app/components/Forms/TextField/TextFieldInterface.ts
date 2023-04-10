@@ -1,5 +1,5 @@
-import { DetailedHTMLProps, LabelHTMLAttributes } from "react";
-import { Control } from "react-hook-form";
+import { DetailedHTMLProps, LabelHTMLAttributes } from 'react';
+import { Control } from 'react-hook-form';
 
 export interface TextFieldInterface {
   control: Control;
@@ -9,8 +9,7 @@ export interface TextFieldInterface {
   disabled?: boolean;
   autoFocus?: boolean;
   type?: string;
-  variant?: "standard" | "filled" | "outlined" | undefined;
+  variant?: 'standard' | 'filled' | 'outlined' | undefined;
   style?: React.CSSProperties | any;
   required?: boolean;
-  inputStyleTextField: string;
 }
