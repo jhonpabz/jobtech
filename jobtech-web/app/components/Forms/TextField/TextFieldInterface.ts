@@ -12,4 +12,5 @@ export interface TextFieldInterface {
   variant?: 'standard' | 'filled' | 'outlined' | undefined;
   style?: React.CSSProperties | any;
   required?: boolean;
+  sx?: any;
 }
