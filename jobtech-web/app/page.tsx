@@ -9,6 +9,7 @@ export default function Home() {
         <Link href="/jobs">Job</Link>
         <Link href="/users">Users</Link>
         <Link href="/landing">Landing Page</Link>
+        <Link href="/register">Register Page</Link>
       </div>
     </main>
   );

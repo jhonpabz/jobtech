@@ -1,3 +1,4 @@
+'use client';
 import { Fragment } from 'react';
 import { useForm } from 'react-hook-form';
 import FormContainer from '../components/Forms/FormContainer/FormContainer';
