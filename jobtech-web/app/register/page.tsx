@@ -1,8 +1,10 @@
 'use client';
 import { Fragment } from 'react';
 import { useForm } from 'react-hook-form';
+import { Box, Paper, Typography } from '@mui/material';
 import FormContainer from '../components/Forms/FormContainer/FormContainer';
 import TextFieldComponent from '../components/Forms/TextField/TextFieldComponent';
+import EmailFieldComponent from '../components/Forms/EmailField/EmailFieldComponent';
 
 const Register = () => {
   const {
@@ -14,21 +16,48 @@ const Register = () => {
 
   return (
     <Fragment>
-      <FormContainer
-        onSubmit={handleSubmit((data) => {
-          console.log(data);
-        })}
-      >
-        <TextFieldComponent
-          autoFocus={true}
-          control={control}
-          disabled={false}
-          errors={errors}
-          label="Full Name"
-          name="fullName"
-          required={true}
-        />
-      </FormContainer>
+      <Box display="flex" alignItems="center" justifyContent="center">
+        <Paper sx={{ minWidth: 555, mt: 10 }} elevation={1}>
+          <Box sx={{ textAlign: 'center', mt: 7 }}>
+            <Typography
+              variant="h4"
+              gutterBottom
+              display="block"
+              component="div"
+            >
+              Register
+            </Typography>
+            <Typography variant="caption" display="block" gutterBottom>
+              JobTech. Job posting site for Tech Industry.
+            </Typography>
+          </Box>
+          <FormContainer
+            onSubmit={handleSubmit((data) => {
+              console.log(data);
+            })}
+          >
+            <Box sx={{ minHeight: '60vh', p: 5 }}>
+              <EmailFieldComponent
+                autoFocus={false}
+                control={control}
+                disabled={false}
+                name="email"
+                required={true}
+                type="email"
+              />
+              <TextFieldComponent
+                autoFocus={true}
+                control={control}
+                disabled={false}
+                errors={errors}
+                label="Full Name"
+                name="fullName"
+                required={true}
+              />
+            </Box>
+          </FormContainer>
+        </Paper>
+      </Box>
     </Fragment>
   );
 };

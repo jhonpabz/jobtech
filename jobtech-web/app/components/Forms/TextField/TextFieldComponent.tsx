@@ -14,6 +14,7 @@ const TextFieldComponent: React.FC<TextFieldInterface> = ({
   required = false,
   disabled = false,
   autoFocus = false,
+  sx,
 }) => {
   return (
     <Controller
@@ -34,7 +35,7 @@ const TextFieldComponent: React.FC<TextFieldInterface> = ({
           fullWidth
           type={type}
           style={style}
-          sx={{ mb: style ? '' : 1, mt: style ? '' : 1 }}
+          sx={{ ...sx }}
         />
       )}
     />
