@@ -1,7 +1,7 @@
 'use client';
 import { Fragment } from 'react';
 import { useForm } from 'react-hook-form';
-import { Box, Paper, Typography } from '@mui/material';
+import { Box, Paper, Typography, Button } from '@mui/material';
 import FormContainer from '../components/Forms/FormContainer/FormContainer';
 import TextFieldComponent from '../components/Forms/TextField/TextFieldComponent';
 import EmailFieldComponent from '../components/Forms/EmailField/EmailFieldComponent';
@@ -14,6 +14,10 @@ const Register = () => {
     formState: { errors },
   } = useForm({});
 
+  const onSubmit = (data: any) => {
+    console.log(data);
+  };
+
   return (
     <Fragment>
       <Box display="flex" alignItems="center" justifyContent="center">
@@ -25,18 +29,23 @@ const Register = () => {
               display="block"
               component="div"
             >
-              Register
+              JobTech
             </Typography>
             <Typography variant="caption" display="block" gutterBottom>
-              JobTech. Job posting site for Tech Industry.
+              Register
             </Typography>
           </Box>
-          <FormContainer
-            onSubmit={handleSubmit((data) => {
-              console.log(data);
-            })}
-          >
+          <FormContainer onSubmit={handleSubmit(onSubmit)}>
             <Box sx={{ minHeight: '60vh', p: 5 }}>
+              <TextFieldComponent
+                autoFocus={true}
+                control={control}
+                disabled={false}
+                errors={errors}
+                label="Name"
+                name="name"
+                required={true}
+              />
               <EmailFieldComponent
                 autoFocus={false}
                 control={control}
@@ -46,14 +55,22 @@ const Register = () => {
                 type="email"
               />
               <TextFieldComponent
-                autoFocus={true}
+                autoFocus={false}
                 control={control}
                 disabled={false}
                 errors={errors}
-                label="Full Name"
-                name="fullName"
+                label="Password"
+                name="password"
                 required={true}
               />
+              <Button
+                sx={{ mt: 2 }}
+                variant="contained"
+                type="submit"
+                fullWidth
+              >
+                Submit
+              </Button>
             </Box>
           </FormContainer>
         </Paper>

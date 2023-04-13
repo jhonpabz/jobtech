@@ -1,5 +1,6 @@
 'use client';
 import { Fragment } from 'react';
+import Link from 'next/link';
 import { useForm } from 'react-hook-form';
 import { Box, Paper, Typography, Button } from '@mui/material';
 import FormContainer from '../components/Forms/FormContainer/FormContainer';
@@ -62,6 +63,9 @@ const Login = () => {
               >
                 Login
               </Button>
+              <Typography mt={2} variant="caption" display="block" gutterBottom>
+                Not a member yet? <Link href="/register">Register</Link>
+              </Typography>
             </Box>
           </FormContainer>
         </Paper>
