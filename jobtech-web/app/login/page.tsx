@@ -1,7 +1,7 @@
 'use client';
 import { Fragment } from 'react';
 import { useForm } from 'react-hook-form';
-import { Box, Paper, Typography } from '@mui/material';
+import { Box, Paper, Typography, Button } from '@mui/material';
 import FormContainer from '../components/Forms/FormContainer/FormContainer';
 import TextFieldComponent from '../components/Forms/TextField/TextFieldComponent';
 import EmailFieldComponent from '../components/Forms/EmailField/EmailFieldComponent';
@@ -13,6 +13,10 @@ const Login = () => {
     handleSubmit,
     formState: { errors },
   } = useForm({});
+
+  const onSubmit = (data: any) => {
+    console.log(data);
+  };
 
   return (
     <Fragment>
@@ -31,11 +35,7 @@ const Login = () => {
               Login
             </Typography>
           </Box>
-          <FormContainer
-            onSubmit={handleSubmit((data) => {
-              console.log(data);
-            })}
-          >
+          <FormContainer onSubmit={handleSubmit(onSubmit)}>
             <Box sx={{ minHeight: '60vh', p: 5 }}>
               <EmailFieldComponent
                 autoFocus={false}
@@ -54,6 +54,14 @@ const Login = () => {
                 name="password"
                 required={true}
               />
+              <Button
+                sx={{ mt: 2 }}
+                variant="contained"
+                type="submit"
+                fullWidth
+              >
+                Login
+              </Button>
             </Box>
           </FormContainer>
         </Paper>
