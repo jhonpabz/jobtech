@@ -1,11 +1,12 @@
-import { Fragment } from 'react';
+import React, { Fragment } from 'react';
 
 import './App.css';
+import Register from './pages/Register';
 
 function App() {
   return (
     <Fragment>
-      <h1>asdf</h1>
+      <Register />
     </Fragment>
   );
 }

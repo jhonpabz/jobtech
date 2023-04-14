@@ -1,0 +1,38 @@
+{
+  "hash": "4227bd45",
+  "browserHash": "51335771",
+  "optimized": {
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "231d455e",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "f3d0916b",
+      "needsInterop": true
+    },
+    "react-hook-form": {
+      "src": "../../node_modules/react-hook-form/dist/index.esm.mjs",
+      "file": "react-hook-form.js",
+      "fileHash": "45392c4c",
+      "needsInterop": false
+    },
+    "@mui/material": {
+      "src": "../../node_modules/@mui/material/index.js",
+      "file": "@mui_material.js",
+      "fileHash": "e27c47e9",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-RPX74UBI": {
+      "file": "chunk-RPX74UBI.js"
+    },
+    "chunk-CGBBZGQ5": {
+      "file": "chunk-CGBBZGQ5.js"
+    }
+  }
+}
