@@ -1,33 +1,48 @@
 {
   "hash": "4227bd45",
-  "browserHash": "51335771",
+  "browserHash": "db6bcaf9",
   "optimized": {
     "react": {
       "src": "../../node_modules/react/index.js",
       "file": "react.js",
-      "fileHash": "231d455e",
+      "fileHash": "0d51aabb",
       "needsInterop": true
     },
     "react-dom/client": {
       "src": "../../node_modules/react-dom/client.js",
       "file": "react-dom_client.js",
-      "fileHash": "f3d0916b",
+      "fileHash": "347bffec",
       "needsInterop": true
     },
     "react-hook-form": {
       "src": "../../node_modules/react-hook-form/dist/index.esm.mjs",
       "file": "react-hook-form.js",
-      "fileHash": "45392c4c",
+      "fileHash": "83094dd7",
       "needsInterop": false
     },
     "@mui/material": {
       "src": "../../node_modules/@mui/material/index.js",
       "file": "@mui_material.js",
-      "fileHash": "e27c47e9",
+      "fileHash": "40facd64",
+      "needsInterop": false
+    },
+    "@tanstack/react-query": {
+      "src": "../../node_modules/@tanstack/react-query/build/lib/index.mjs",
+      "file": "@tanstack_react-query.js",
+      "fileHash": "01efd329",
+      "needsInterop": false
+    },
+    "@tanstack/react-query-devtools": {
+      "src": "../../node_modules/@tanstack/react-query-devtools/build/lib/index.mjs",
+      "file": "@tanstack_react-query-devtools.js",
+      "fileHash": "07d4784f",
       "needsInterop": false
     }
   },
   "chunks": {
+    "chunk-SLDS4YOS": {
+      "file": "chunk-SLDS4YOS.js"
+    },
     "chunk-RPX74UBI": {
       "file": "chunk-RPX74UBI.js"
     },
