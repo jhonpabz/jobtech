@@ -1,7 +1,8 @@
 import React, { Fragment } from 'react';
 import axios from 'axios';
 import { useForm } from 'react-hook-form';
-import { Box, Paper, Typography, Button } from '@mui/material';
+import { Box, Paper, Typography } from '@mui/material';
+import LoadingButton from '@mui/lab/LoadingButton';
 import FormContainer from '../../components/Forms/FormContainer/FormContainer';
 import TextFieldComponent from '../../components/Forms/TextField/TextFieldComponent';
 import EmailFieldComponent from '../../components/Forms/EmailField/EmailFieldComponent';
@@ -23,17 +24,16 @@ const Register = () => {
     },
   });
 
+  const { isSuccess, isLoading, isError } = useRegisterFormMutation;
+
   const onSubmit = (data: any) => {
     console.log(data);
     useRegisterFormMutation.mutate(data);
-    console.log(
-      'useRegisterFormMutation.isSuccess: ',
-      useRegisterFormMutation.isSuccess
-    );
   };
 
   return (
     <Fragment>
+      {/* {isSuccess && <h1>isSuccess</h1>} */}
       <Box display="flex" alignItems="center" justifyContent="center">
         <Paper sx={{ minWidth: 555, mt: 10 }} elevation={1}>
           <Box sx={{ textAlign: 'center', mt: 7 }}>
@@ -56,8 +56,26 @@ const Register = () => {
                 control={control}
                 disabled={false}
                 errors={errors}
-                label="Name"
+                label="First Name"
                 name="name"
+                required={true}
+              />
+              <TextFieldComponent
+                autoFocus={false}
+                control={control}
+                disabled={false}
+                errors={errors}
+                label="Last Name"
+                name="lastName"
+                required={true}
+              />
+              <TextFieldComponent
+                autoFocus={false}
+                control={control}
+                disabled={false}
+                errors={errors}
+                label="Location"
+                name="location"
                 required={true}
               />
               <EmailFieldComponent
@@ -77,14 +95,16 @@ const Register = () => {
                 name="password"
                 required={true}
               />
-              <Button
-                sx={{ mt: 2 }}
+              <LoadingButton
+                sx={{ mt: 2, p: 2 }}
                 variant="contained"
                 type="submit"
                 fullWidth
+                loading={isLoading}
+                disabled={isLoading}
               >
                 Submit
-              </Button>
+              </LoadingButton>
             </Box>
           </FormContainer>
         </Paper>

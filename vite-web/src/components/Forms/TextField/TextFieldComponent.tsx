@@ -10,7 +10,7 @@ const TextFieldComponent: React.FC<TextFieldInterface> = ({
   errors,
   type,
   style,
-  variant = 'standard',
+  variant = 'outlined',
   required = false,
   disabled = false,
   autoFocus = false,
@@ -35,7 +35,7 @@ const TextFieldComponent: React.FC<TextFieldInterface> = ({
           fullWidth
           type={type}
           style={style}
-          sx={{ ...sx }}
+          sx={{ ...sx, my: 1 }}
         />
       )}
     />

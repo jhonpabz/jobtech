@@ -6,6 +6,6 @@ export interface EmailFieldInterface {
   disabled: boolean;
   autoFocus: boolean;
   type?: string;
-  variant?: "standard" | "filled" | "outlined" | undefined;
-  style?: React.CSSProperties;
+  variant?: 'standard' | 'filled' | 'outlined' | undefined;
+  sx?: React.CSSProperties;
 }
