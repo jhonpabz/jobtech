@@ -1,53 +1,62 @@
 {
-  "hash": "4227bd45",
-  "browserHash": "db6bcaf9",
+  "hash": "ae572d35",
+  "browserHash": "3bd40422",
   "optimized": {
     "react": {
       "src": "../../node_modules/react/index.js",
       "file": "react.js",
-      "fileHash": "0d51aabb",
+      "fileHash": "a441d93a",
       "needsInterop": true
     },
     "react-dom/client": {
       "src": "../../node_modules/react-dom/client.js",
       "file": "react-dom_client.js",
-      "fileHash": "347bffec",
+      "fileHash": "eb6ad194",
       "needsInterop": true
     },
     "react-hook-form": {
       "src": "../../node_modules/react-hook-form/dist/index.esm.mjs",
       "file": "react-hook-form.js",
-      "fileHash": "83094dd7",
+      "fileHash": "fc2ce53f",
       "needsInterop": false
     },
     "@mui/material": {
       "src": "../../node_modules/@mui/material/index.js",
       "file": "@mui_material.js",
-      "fileHash": "40facd64",
+      "fileHash": "a3069021",
       "needsInterop": false
     },
     "@tanstack/react-query": {
       "src": "../../node_modules/@tanstack/react-query/build/lib/index.mjs",
       "file": "@tanstack_react-query.js",
-      "fileHash": "01efd329",
+      "fileHash": "dba4e729",
       "needsInterop": false
     },
     "@tanstack/react-query-devtools": {
       "src": "../../node_modules/@tanstack/react-query-devtools/build/lib/index.mjs",
       "file": "@tanstack_react-query-devtools.js",
-      "fileHash": "07d4784f",
+      "fileHash": "10848a6a",
+      "needsInterop": false
+    },
+    "axios": {
+      "src": "../../node_modules/axios/index.js",
+      "file": "axios.js",
+      "fileHash": "05bd86cd",
       "needsInterop": false
     }
   },
   "chunks": {
-    "chunk-SLDS4YOS": {
-      "file": "chunk-SLDS4YOS.js"
+    "chunk-FUPVPB7Z": {
+      "file": "chunk-FUPVPB7Z.js"
     },
-    "chunk-RPX74UBI": {
-      "file": "chunk-RPX74UBI.js"
+    "chunk-2MRMY2VI": {
+      "file": "chunk-2MRMY2VI.js"
     },
-    "chunk-CGBBZGQ5": {
-      "file": "chunk-CGBBZGQ5.js"
+    "chunk-6DDWND5A": {
+      "file": "chunk-6DDWND5A.js"
+    },
+    "chunk-4EOJPDL2": {
+      "file": "chunk-4EOJPDL2.js"
     }
   }
 }

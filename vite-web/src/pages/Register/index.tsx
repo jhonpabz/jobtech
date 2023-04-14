@@ -1,9 +1,11 @@
 import React, { Fragment } from 'react';
+import axios from 'axios';
 import { useForm } from 'react-hook-form';
 import { Box, Paper, Typography, Button } from '@mui/material';
 import FormContainer from '../../components/Forms/FormContainer/FormContainer';
 import TextFieldComponent from '../../components/Forms/TextField/TextFieldComponent';
 import EmailFieldComponent from '../../components/Forms/EmailField/EmailFieldComponent';
+import { useMutation } from '@tanstack/react-query';
 
 const Register = () => {
   const {
@@ -13,8 +15,21 @@ const Register = () => {
     formState: { errors },
   } = useForm({});
 
+  const baseUrl = import.meta.env.VITE_APP_API_URL;
+
+  const useRegisterFormMutation = useMutation({
+    mutationFn: (formData: any) => {
+      return axios.post(baseUrl + '/auth/register', formData);
+    },
+  });
+
   const onSubmit = (data: any) => {
     console.log(data);
+    useRegisterFormMutation.mutate(data);
+    console.log(
+      'useRegisterFormMutation.isSuccess: ',
+      useRegisterFormMutation.isSuccess
+    );
   };
 
   return (
