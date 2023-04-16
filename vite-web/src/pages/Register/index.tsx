@@ -1,12 +1,14 @@
 import React, { Fragment, useEffect } from 'react';
 import axios from 'axios';
 import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
 import { Box, Paper, Typography } from '@mui/material';
 import LoadingButton from '@mui/lab/LoadingButton';
 import FormContainer from '../../components/Forms/FormContainer/FormContainer';
 import TextFieldComponent from '../../components/Forms/TextField/TextFieldComponent';
-import EmailFieldComponent from '../../components/Forms/EmailField/EmailFieldComponent';
+// import EmailFieldComponent from '../../components/Forms/EmailField/EmailFieldComponent';
 import { useMutation } from '@tanstack/react-query';
+import { registerSchema } from './validation';
 
 const Register = () => {
   const {
@@ -15,7 +17,16 @@ const Register = () => {
     reset,
     handleSubmit,
     formState: { errors },
-  } = useForm({});
+  } = useForm({
+    resolver: yupResolver(registerSchema),
+    defaultValues: {
+      name: '',
+      lastName: '',
+      location: '',
+      email: '',
+      password: '',
+    },
+  });
 
   const baseUrl = import.meta.env.VITE_APP_API_URL;
 
@@ -91,10 +102,21 @@ const Register = () => {
                 name="location"
                 required={true}
               />
-              <EmailFieldComponent
+              {/* <EmailFieldComponent
                 autoFocus={false}
                 control={control}
                 disabled={false}
+                name="email"
+                required={true}
+                type="email"
+              /> */}
+
+              <TextFieldComponent
+                autoFocus={false}
+                control={control}
+                disabled={false}
+                errors={errors}
+                label="Email"
                 name="email"
                 required={true}
                 type="email"
