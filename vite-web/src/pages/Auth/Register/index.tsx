@@ -122,6 +122,7 @@ const Register = () => {
                 label="Password"
                 name="password"
                 required={true}
+                type="password"
               />
               <LoadingButton
                 sx={{ mt: 2, p: 2 }}
