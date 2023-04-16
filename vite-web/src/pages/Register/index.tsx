@@ -8,7 +8,7 @@ import FormContainer from '../../components/Forms/FormContainer/FormContainer';
 import TextFieldComponent from '../../components/Forms/TextField/TextFieldComponent';
 import { useMutation } from '@tanstack/react-query';
 import { registerSchema } from './validation';
-
+import { toast } from 'react-toastify';
 const Register = () => {
   const {
     control,
@@ -48,10 +48,14 @@ const Register = () => {
   };
 
   useEffect(() => {
+    if (isError) {
+      toast.error(error.response.data.msg);
+    }
     if (isSuccess) {
       reset();
+      toast.success('Your account has been created!');
     }
-  }, [registerData]);
+  }, [registerData, error]);
 
   return (
     <Fragment>
