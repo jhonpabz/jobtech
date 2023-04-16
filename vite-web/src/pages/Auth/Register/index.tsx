@@ -9,7 +9,12 @@ import TextFieldComponent from '@components/Forms/TextField/TextFieldComponent';
 import { useMutation } from '@tanstack/react-query';
 import { registerSchema } from './validation';
 import { toast } from 'react-toastify';
+import { useTokenStore, useUserStore } from '@stores/index';
+
 const Register = () => {
+  const setToken = useTokenStore((state) => state.setToken);
+  const setUser = useUserStore((state) => state.setUser);
+
   const {
     control,
     reset,
@@ -54,6 +59,8 @@ const Register = () => {
     if (isSuccess) {
       reset();
       toast.success('Your account has been created!');
+      setToken(registerData.data.token);
+      setUser(registerData.data.user);
     }
   }, [registerData, error]);
 
