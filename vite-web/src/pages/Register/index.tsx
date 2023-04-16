@@ -6,13 +6,11 @@ import { Box, Paper, Typography } from '@mui/material';
 import LoadingButton from '@mui/lab/LoadingButton';
 import FormContainer from '../../components/Forms/FormContainer/FormContainer';
 import TextFieldComponent from '../../components/Forms/TextField/TextFieldComponent';
-// import EmailFieldComponent from '../../components/Forms/EmailField/EmailFieldComponent';
 import { useMutation } from '@tanstack/react-query';
 import { registerSchema } from './validation';
 
 const Register = () => {
   const {
-    register,
     control,
     reset,
     handleSubmit,
@@ -102,15 +100,6 @@ const Register = () => {
                 name="location"
                 required={true}
               />
-              {/* <EmailFieldComponent
-                autoFocus={false}
-                control={control}
-                disabled={false}
-                name="email"
-                required={true}
-                type="email"
-              /> */}
-
               <TextFieldComponent
                 autoFocus={false}
                 control={control}
