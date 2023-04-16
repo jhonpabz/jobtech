@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react';
 
 import './App.css';
-import Register from './pages/Register';
 
+import { BrowserRouter } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Router from '@routes/Router';
@@ -11,9 +11,10 @@ import Router from '@routes/Router';
 function App() {
   return (
     <Fragment>
-      <ToastContainer />
-      {/* <Register /> */}
-      <Router />
+      <BrowserRouter>
+        <ToastContainer />
+        <Router />
+      </BrowserRouter>
     </Fragment>
   );
 }

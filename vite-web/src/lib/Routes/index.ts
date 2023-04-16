@@ -1,9 +1,10 @@
 import { Navigate } from 'react-router-dom';
 
 // Public page
-import Register from '@pages/Register';
+import Register from '@pages/Auth/Register';
 
 // Private page
+import Dashboard from '@pages/Dashboard';
 
 // Roles
 import { Roles } from '@lib/Roles';
@@ -22,9 +23,8 @@ export const RouteList = [
   // Private routes
   {
     path: '/',
-    Component: Register,
+    Component: Dashboard,
     isPrivateRoute: true,
-    isPresenterMode: false,
     roles: [all],
   },
 ];
