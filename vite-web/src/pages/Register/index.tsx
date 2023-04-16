@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import axios from 'axios';
 import { useForm } from 'react-hook-form';
 import { Box, Paper, Typography } from '@mui/material';
@@ -12,6 +12,7 @@ const Register = () => {
   const {
     register,
     control,
+    reset,
     handleSubmit,
     formState: { errors },
   } = useForm({});
@@ -24,12 +25,24 @@ const Register = () => {
     },
   });
 
-  const { isSuccess, isLoading, isError } = useRegisterFormMutation;
+  const {
+    isSuccess,
+    isLoading,
+    isError,
+    error,
+    data: registerData,
+  } = useRegisterFormMutation;
 
-  const onSubmit = (data: any) => {
-    console.log(data);
-    useRegisterFormMutation.mutate(data);
+  const onSubmit = (formData: any) => {
+    console.log(formData);
+    useRegisterFormMutation.mutate(formData);
   };
+
+  useEffect(() => {
+    if (isSuccess) {
+      reset();
+    }
+  }, [registerData]);
 
   return (
     <Fragment>
