@@ -4,6 +4,7 @@ import express from 'express';
 const app = express();
 import dotenv from 'dotenv';
 import 'express-async-errors';
+import morgan from 'morgan';
 
 // DB and authenticateUser
 import connectDB from './db/connect.js';
@@ -17,6 +18,10 @@ import notFoundMiddleware from './middleware/notFound.js';
 import errorHandlerMiddleware from './middleware/errorHandler.js';
 
 app.use(cors());
+
+if (process.env.NODE_ENV !== 'production') {
+  app.use(morgan('dev'));
+}
 app.use(express.json());
 
 app.get('/api/v1', (req, res) => {
