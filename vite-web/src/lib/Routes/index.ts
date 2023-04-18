@@ -8,6 +8,7 @@ import Dashboard from '@pages/Dashboard';
 
 // Roles
 import { Roles } from '@lib/Roles';
+import Login from '@pages/Auth/Login';
 
 const { admin, all, user } = Roles;
 
@@ -17,6 +18,12 @@ export const RouteList = [
     path: '/register',
     isPrivateRoute: false,
     Component: Register,
+    roles: [all],
+  },
+  {
+    path: '/login',
+    isPrivateRoute: false,
+    Component: Login,
     roles: [all],
   },
 
