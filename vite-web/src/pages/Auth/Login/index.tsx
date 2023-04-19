@@ -24,9 +24,13 @@ const Login = () => {
 
   const baseUrl = import.meta.env.VITE_APP_API_URL;
 
-  const useRegisterFormMutation = useMutation({
+  const useLoginFormMutation = useMutation({
     mutationFn: (formData: any) => {
       return axios.post(baseUrl + '/auth/login', formData);
+    },
+    onSuccess: () => {
+      reset();
+      toast.success('Login succesfully!');
     },
   });
 
@@ -36,11 +40,11 @@ const Login = () => {
     isError,
     error,
     data: loginData,
-  } = useRegisterFormMutation;
+  } = useLoginFormMutation;
 
   const onSubmit = (formData: any) => {
     console.log(formData);
-    useRegisterFormMutation.mutate(formData);
+    useLoginFormMutation.mutate(formData);
   };
 
   useEffect(() => {
@@ -48,8 +52,6 @@ const Login = () => {
       toast.error(error.response.data.msg);
     }
     if (isSuccess) {
-      reset();
-      toast.success('Your account has been created!');
       setToken(loginData.data.token);
       setUser(loginData.data.user);
     }
