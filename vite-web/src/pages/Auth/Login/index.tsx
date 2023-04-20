@@ -7,9 +7,9 @@ import LoadingButton from '@mui/lab/LoadingButton';
 import FormContainer from '@components/Forms/FormContainer/FormContainer';
 import TextFieldComponent from '@components/Forms/TextField/TextFieldComponent';
 import { useMutation } from '@tanstack/react-query';
-
 import { toast } from 'react-toastify';
 import { useTokenStore, useUserStore } from '@stores/index';
+import { loginSchema } from './validation/loginSchema';
 
 const Login = () => {
   const setToken = useTokenStore((state) => state.setToken);
@@ -20,7 +20,9 @@ const Login = () => {
     reset,
     handleSubmit,
     formState: { errors },
-  } = useForm({});
+  } = useForm({
+    resolver: yupResolver(loginSchema),
+  });
 
   const baseUrl = import.meta.env.VITE_APP_API_URL;
 
@@ -54,6 +56,7 @@ const Login = () => {
     if (isSuccess) {
       setToken(loginData.data.token);
       setUser(loginData.data.user);
+      toast.success('Login succesfully!');
     }
   }, [loginData, error]);
   console.log('loginData: ', loginData);
