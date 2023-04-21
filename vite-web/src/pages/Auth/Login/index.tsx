@@ -56,7 +56,6 @@ const Login = () => {
     if (isSuccess) {
       setToken(loginData.data.token);
       setUser(loginData.data.user);
-      toast.success('Login succesfully!');
     }
   }, [loginData, error]);
   console.log('loginData: ', loginData);

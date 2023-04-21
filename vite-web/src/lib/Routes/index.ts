@@ -19,12 +19,14 @@ export const RouteList = [
     isPrivateRoute: false,
     Component: Register,
     roles: [all],
+    pageName: 'Register',
   },
   {
     path: '/login',
     isPrivateRoute: false,
     Component: Login,
     roles: [all],
+    pageName: 'Login',
   },
 
   // Private routes
@@ -33,5 +35,6 @@ export const RouteList = [
     Component: Dashboard,
     isPrivateRoute: true,
     roles: [all],
+    pageName: 'Dashboard',
   },
 ];
