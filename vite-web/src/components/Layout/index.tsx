@@ -189,7 +189,15 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
           ))}
         </List>
       </Drawer>
-      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+      <Box
+        component="main"
+        sx={{
+          flexBasis: 'calc(100vh - 64px)',
+          flexGrow: 1,
+          p: 3,
+          minHeight: '100vh',
+        }}
+      >
         <DrawerHeader />
         {children}
       </Box>
