@@ -17,9 +17,8 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
-import { RouteList } from '@lib/Routes';
 import { useNavigate } from 'react-router-dom';
+import { routes } from '@lib/Routes/SidebarRoutes';
 
 const drawerWidth = 240;
 
@@ -143,7 +142,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
         </DrawerHeader>
         <Divider />
         <List>
-          {RouteList.map((route, i) => (
+          {routes.map((route, i) => (
             <ListItem key={i} disablePadding sx={{ display: 'block' }}>
               <ListItemButton
                 onClick={() => navigate(route.path)}
@@ -160,10 +159,11 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
                     justifyContent: 'center',
                   }}
                 >
-                  <InboxIcon />
+                  {route.Icon}
                 </ListItemIcon>
+
                 <ListItemText
-                  primary={route.pageName}
+                  primary={route.name}
                   sx={{ opacity: open ? 1 : 0 }}
                 />
               </ListItemButton>
