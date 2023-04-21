@@ -1,11 +1,14 @@
 import { Layout } from '@components/Layout';
 import React from 'react';
 import { Navigate, Outlet, useLocation } from 'react-router-dom';
+import { useAuthStore } from '@stores/index';
 
 const PrivateRoute = ({ roles }) => {
   const location = useLocation();
+  const { isAuthenticated } = useAuthStore((state) => ({
+    isAuthenticated: state.isAuthenticated,
+  }));
 
-  const isAuthenticated = true; // ? hooks for authentication
   const isAuthorized = true; // ? logic for authorization
 
   if (!isAuthenticated)
