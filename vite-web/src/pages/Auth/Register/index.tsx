@@ -7,7 +7,7 @@ import LoadingButton from '@mui/lab/LoadingButton';
 import FormContainer from '@components/Forms/FormContainer/FormContainer';
 import TextFieldComponent from '@components/Forms/TextField/TextFieldComponent';
 import { useMutation } from '@tanstack/react-query';
-import { registerSchema } from './validation';
+import { registerSchema } from './validation/registerSchema';
 import { toast } from 'react-toastify';
 import { useTokenStore, useUserStore } from '@stores/index';
 

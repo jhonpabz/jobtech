@@ -1,3 +1,4 @@
+import { Layout } from '@components/Layout';
 import React from 'react';
 import { Navigate, Outlet, useLocation } from 'react-router-dom';
 
@@ -13,7 +14,11 @@ const PrivateRoute = ({ roles }) => {
   if (!isAuthorized)
     return <Navigate to="/unauthorized" state={{ from: location }} replace />;
 
-  return <Outlet />;
+  return (
+    <Layout>
+      <Outlet />
+    </Layout>
+  );
 };
 
 export default PrivateRoute;
