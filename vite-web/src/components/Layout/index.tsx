@@ -19,6 +19,7 @@ import ListItemText from '@mui/material/ListItemText';
 import { useNavigate } from 'react-router-dom';
 import { routes } from '@lib/Routes/SidebarRoutes';
 import { AppBar, Drawer, DrawerHeader } from './utils';
+import { LogoutComponent } from './Logout/LogoutComponent';
 
 interface LayoutProps {
   children: React.ReactElement;
@@ -100,6 +101,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
           ))}
         </List>
         <Divider />
+        <LogoutComponent open={open} />
       </Drawer>
       <Box
         component="main"
