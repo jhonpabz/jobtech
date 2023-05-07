@@ -1,11 +1,10 @@
 import cors from 'cors';
-dotenv.config();
 import express from 'express';
 const app = express();
 import dotenv from 'dotenv';
 import 'express-async-errors';
 import morgan from 'morgan';
-
+dotenv.config();
 // DB and authenticateUser
 import connectDB from './db/connect.js';
 
@@ -16,6 +15,7 @@ import jobsRouter from './routes/jobsRoutes.js';
 // middleware
 import notFoundMiddleware from './middleware/notFound.js';
 import errorHandlerMiddleware from './middleware/errorHandler.js';
+import authenticateUser from './middleware/auth.js';
 
 app.use(cors());
 
@@ -29,7 +29,7 @@ app.get('/api/v1', (req, res) => {
 });
 
 app.use('/api/v1/auth', authRouter);
-app.use('/api/v1/jobs', jobsRouter);
+app.use('/api/v1/jobs', authenticateUser, jobsRouter);
 
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
