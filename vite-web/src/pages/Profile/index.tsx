@@ -5,8 +5,23 @@ import { FormContainer, TextFieldComponent } from '@components/Forms';
 import { useForm } from 'react-hook-form';
 import { Box } from '@mui/material';
 import LoadingButton from '@mui/lab/LoadingButton';
+import { useUserStore } from '@stores/useUserStore';
+
+// type UserTypes = {
+//   name: string;
+//   lastName: string;
+//   location: string;
+//   email: string;
+//   _id: string;
+// };
 
 const Profile = (): ReactElement => {
+  const { User } = useUserStore((state) => ({
+    User: state.User,
+  }));
+
+  console.log('user: ', User.name);
+
   const {
     control,
     reset,
@@ -14,10 +29,10 @@ const Profile = (): ReactElement => {
     formState: { errors },
   } = useForm({
     defaultValues: {
-      name: '',
-      lastName: '',
-      location: '',
-      email: '',
+      name: User.name,
+      lastName: User.lastName,
+      location: User.location,
+      email: User.email,
     },
   });
 

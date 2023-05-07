@@ -2,6 +2,14 @@ import { create } from 'zustand';
 
 import { devtools, persist } from 'zustand/middleware';
 
+// type UserTypes = {
+//   name: string;
+//   lastName: string;
+//   location: string;
+//   email: string;
+//   _id: string;
+// };
+
 const userInfoStore = (set: (arg0: () => { User: any[] }) => void) => ({
   User: {},
   setUser: (data: any) => {
