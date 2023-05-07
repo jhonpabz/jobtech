@@ -3,7 +3,7 @@ import { TextField } from '@mui/material';
 import { Controller } from 'react-hook-form';
 import { TextFieldInterface } from './TextFieldInterface';
 
-const TextFieldComponent: React.FC<TextFieldInterface> = ({
+export const TextFieldComponent: React.FC<TextFieldInterface> = ({
   control,
   name,
   label,
@@ -41,5 +41,3 @@ const TextFieldComponent: React.FC<TextFieldInterface> = ({
     />
   );
 };
-
-export default TextFieldComponent;

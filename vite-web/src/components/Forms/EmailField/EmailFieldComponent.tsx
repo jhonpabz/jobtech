@@ -3,7 +3,7 @@ import { TextField } from '@mui/material';
 import { Controller, FieldError } from 'react-hook-form';
 import { EmailFieldInterface } from './EmailFieldInterface';
 
-const EmailFieldComponent: React.FC<EmailFieldInterface> = ({
+export const EmailFieldComponent: React.FC<EmailFieldInterface> = ({
   control,
   name,
   required,
@@ -68,5 +68,3 @@ const EmailFieldComponent: React.FC<EmailFieldInterface> = ({
     </>
   );
 };
-
-export default EmailFieldComponent;

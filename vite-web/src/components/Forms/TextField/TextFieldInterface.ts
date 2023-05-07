@@ -2,7 +2,7 @@ import { DetailedHTMLProps, LabelHTMLAttributes } from 'react';
 import { Control } from 'react-hook-form';
 
 export interface TextFieldInterface {
-  control: Control;
+  control: Control | any;
   name: string;
   label: string;
   errors: any;
